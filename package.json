@@ -1,11 +1,11 @@
 {
   "name": "boilerplate-github",
   "version": "1.0.0",
-  "description": "boilerplate-description",
-  "homepage": "boilerplate-homepage",
+  "description": "boilerplate-github-description",
+  "homepage": "boilerplate-github-homepage",
   "author": {
-    "name": "boilerplate-author",
-    "email": "boilerplate-email"
+    "name": "boilerplate-github-author",
+    "email": "boilerplate-github-email"
   },
   "main": "index.js",
   "license": "MIT"
