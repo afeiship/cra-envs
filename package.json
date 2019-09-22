@@ -1,0 +1,12 @@
+{
+  "name": "boilerplate-github",
+  "version": "1.0.0",
+  "description": "A boilerplate template for an empty github project.",
+  "homepage": "boilerplate-homepage",
+  "author": {
+    "name": "boilerplate-author",
+    "email": "boilerplate-email"
+  },
+  "main": "index.js",
+  "license": "MIT"
+}
