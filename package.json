@@ -7,6 +7,5 @@
     "name": "boilerplate-github-author",
     "email": "boilerplate-github-email"
   },
-  "main": "index.js",
   "license": "MIT"
 }
