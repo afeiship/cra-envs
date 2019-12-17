@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate-github",
+  "name": "@feizheng/boilerplate-github",
   "version": "1.0.0",
   "description": "boilerplate-github-description",
   "homepage": "boilerplate-github-homepage",
@@ -7,5 +7,8 @@
     "name": "boilerplate-github-author",
     "email": "boilerplate-github-email"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
 }
