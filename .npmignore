@@ -3,6 +3,10 @@
 **/npm-debug.log
 **/node_modules
 test
+__tests__
 src
 build
 gulpfile.js
+
+.editorconfig
+.prettierrc
