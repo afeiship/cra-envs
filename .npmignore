@@ -8,5 +8,10 @@ src
 build
 gulpfile.js
 
+
 .editorconfig
 .prettierrc
+
+# vscode
+.vscode
+.history
