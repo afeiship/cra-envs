@@ -1,5 +1,5 @@
 {
-  "name": "@boilerplate-scope/boilerplate-github",
+  "name": "<%= scope %>/boilerplate-github",
   "version": "1.0.0",
   "description": "boilerplate-github-description",
   "homepage": "boilerplate-github-homepage",
@@ -9,6 +9,6 @@
   },
   "license": "MIT",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "<%= registry.publish %>"
   }
 }
