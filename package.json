@@ -2,7 +2,7 @@
   "name": "@<%= scope %>/boilerplate-github",
   "version": "1.0.0",
   "description": "boilerplate-github-description",
-  "homepage": "boilerplate-github-homepage",
+  "homepage": "https://js.work",
   "author": {
     "name": "boilerplate-github-author",
     "email": "boilerplate-github-email"
@@ -10,5 +10,10 @@
   "license": "MIT",
   "publishConfig": {
     "registry": "<%= registry.publish %>"
+  },
+  "boilerplate": "@<%= scope %>/boilerplate-github",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/afeiship/@<%= scope %>/boilerplate-github"
   }
 }
