@@ -16,6 +16,7 @@ npm install -S @jswork/cra-envs
 - https://js.work/works/bd65bc9da65c5
 
 ```json
+// ---------- package.json
 "scripts": {
   "start": "env-cmd -e local react-scripts start",
   "build:beta": "env-cmd -e beta react-scripts build",
@@ -44,7 +45,7 @@ module.exports = CraEnvs.set({
   },
 });
 
-// ---------- app.tsx
+// ---------- src/app.tsx
 // get 'BUILD_ENV'
 const buildEnv = CraEnvs.get('BUILD_ENV');
 // get all
