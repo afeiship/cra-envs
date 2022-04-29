@@ -4,7 +4,7 @@ declare var process: any;
 
 type PathType = null | string;
 interface EnvType {
-  [index: string]: string;
+  readonly [index: string]: string;
 }
 
 const RC_APP = 'REACT_APP_';
