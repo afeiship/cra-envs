@@ -5,7 +5,6 @@
   "hooks": {
     "after:init": [
       "npm run test",
-      "npm run docs",
       "t2k"
     ],
     "after:bump": [
