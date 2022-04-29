@@ -14,7 +14,8 @@ npm install @jswork/cra-envs
 ## usage
 ```js
 import CraEnvs from '@jswork/cra-envs';
-
+// or es5
+const CraEnvs from '@jswork/cra-envs'
 // usage goes here.
 ```
 
