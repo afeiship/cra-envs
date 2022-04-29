@@ -21,6 +21,26 @@ describe('api.basic', () => {
     });
   });
 
+  test('api sets has REACT_APP_ prefix should be worked', () => {
+    const res = CraEnvs.sets({
+      local: {
+        REACT_APP_BUILD_ENV: 'local-api.github.com/users/afeiship'
+      },
+      beta: {
+        REACT_APP_BUILD_ENV: 'beta-api.github.com/users/afeiship'
+      },
+      production: {
+        REACT_APP_BUILD_ENV: 'api.github.com/users/afeiship'
+      }
+    });
+
+    expect(res).toEqual({
+      local: { REACT_APP_BUILD_ENV: 'local-api.github.com/users/afeiship' },
+      beta: { REACT_APP_BUILD_ENV: 'beta-api.github.com/users/afeiship' },
+      production: { REACT_APP_BUILD_ENV: 'api.github.com/users/afeiship' }
+    });
+  });
+
   test('api gets without env', () => {
     const cmdrc = {
       local: { REACT_APP_BUILD_ENV: 'local-api.github.com/users/afeiship' },

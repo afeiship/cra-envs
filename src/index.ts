@@ -28,8 +28,10 @@ export default class {
     const envs = inCmdRc;
     nx.forIn(envs, (_: EnvType, value) => {
       nx.forIn(value, (k, v) => {
-        value[RC_APP + k] = v;
-        delete value[k];
+        if (!k.includes(RC_APP)) {
+          value[RC_APP + k] = v;
+          delete value[k];
+        }
       });
     });
     return envs;
