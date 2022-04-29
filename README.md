@@ -12,6 +12,8 @@ npm install @jswork/cra-envs
 ```
 
 ## usage
+- https://js.work/works/bd65bc9da65c5
+
 ```js
 const CraEnvs = require('@jswork/cra-envs').default;
 
