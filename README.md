@@ -8,7 +8,8 @@
 
 ## installation
 ```shell
-npm install @jswork/cra-envs
+npm install -D env-cmd
+npm install -S @jswork/cra-envs
 ```
 
 ## usage
