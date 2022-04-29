@@ -16,7 +16,7 @@ npm install -S @jswork/cra-envs
 - https://js.work/works/bd65bc9da65c5
 
 ```js
-// .env-cmdrc.js
+// ---------- .env-cmdrc.js
 const CraEnvs = require('@jswork/cra-envs').default;
 
 module.exports = CraEnvs.set({
@@ -34,7 +34,7 @@ module.exports = CraEnvs.set({
   },
 });
 
-// app.tsx
+// ---------- app.tsx
 // get 'BUILD_ENV'
 const buildEnv = CraEnvs.get('BUILD_ENV');
 // get all
