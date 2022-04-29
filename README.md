@@ -15,6 +15,16 @@ npm install -S @jswork/cra-envs
 ## usage
 - https://js.work/works/bd65bc9da65c5
 
+```json
+"scripts": {
+  "start": "env-cmd -e local react-scripts start",
+  "build:beta": "env-cmd -e beta react-scripts build",
+  "build:prod": "env-cmd -e prod react-scripts build",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject"
+}
+```
+
 ```js
 // ---------- .env-cmdrc.js
 const CraEnvs = require('@jswork/cra-envs');
