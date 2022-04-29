@@ -32,5 +32,4 @@ class CraEnvs {
   }
 }
 
-module.exports = CraEnvs;
-// export = CraEnvs;
+export default CraEnvs;
