@@ -14,6 +14,9 @@ describe('api.basic', () => {
       }
     });
 
+    // production
+    expect(process.env['BUILD_ENV']).toBe('api.github.com/users/afeiship');
+
     expect(res).toEqual({
       local: { REACT_APP_BUILD_ENV: 'local-api.github.com/users/afeiship' },
       beta: { REACT_APP_BUILD_ENV: 'beta-api.github.com/users/afeiship' },
@@ -43,11 +46,13 @@ describe('api.basic', () => {
 
   test('api get will get without prefix envs', () => {
     var envs = {
+      PORT: 3001,
       REACT_APP_BUILD_ENV: 'local-api.github.com/users/afeiship',
       NODE_ENV: 'production'
     };
 
     expect(CraEnvs.get(null, envs)).toEqual({
+      PORT: 3001,
       NODE_ENV: 'production',
       BUILD_ENV: 'local-api.github.com/users/afeiship'
     });

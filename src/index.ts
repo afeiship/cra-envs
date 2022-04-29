@@ -26,9 +26,8 @@ class CraEnvs {
     const envs = inCmdRc;
     nx.forIn(envs, (_: string, value) => {
       nx.forIn(value, (k: string, v: EnvType) => {
-        if (k.includes(RC_APP)) {
-          process.env[k] = value;
-        } else {
+        process.env[k] = v;
+        if (!k.includes(RC_APP)) {
           value[RC_APP + k] = v;
           delete value[k];
         }
