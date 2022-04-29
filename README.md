@@ -33,7 +33,10 @@ module.exports = CraEnvs.set({
 });
 
 // app.tsx
-// CraEnvs.get('BUILD_ENV')
+// get 'BUILD_ENV'
+const buildEnv = CraEnvs.get('BUILD_ENV');
+// get all
+const envs = CraEnvs.get();
 ```
 
 ## license
