@@ -47,9 +47,11 @@ describe('api.basic', () => {
       NODE_ENV: 'production'
     };
 
-    expect(CraEnvs.get(envs)).toEqual({
+    expect(CraEnvs.get(null, envs)).toEqual({
       NODE_ENV: 'production',
       BUILD_ENV: 'local-api.github.com/users/afeiship'
     });
+
+    expect(CraEnvs.get('NODE_ENV', envs)).toEqual('production');
   });
 });
