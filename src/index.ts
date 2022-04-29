@@ -4,7 +4,7 @@ declare var process: any;
 
 type PathType = null | string;
 interface EnvType {
-  readonly [index: string]: string;
+  readonly [index: string]: unknown;
 }
 
 const RC_APP = 'REACT_APP_';
@@ -26,7 +26,8 @@ class CraEnvs {
     const envs = inCmdRc;
     nx.forIn(envs, (_: string, value) => {
       nx.forIn(value, (k: string, v: EnvType) => {
-        process.env[k] = v;
+        // v: must be string
+        if (typeof v === 'string') process.env[k] = v;
         if (!k.includes(RC_APP)) {
           value[RC_APP + k] = v;
           delete value[k];
