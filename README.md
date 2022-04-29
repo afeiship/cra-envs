@@ -17,7 +17,7 @@ npm install -S @jswork/cra-envs
 
 ```js
 // ---------- .env-cmdrc.js
-const CraEnvs = require('@jswork/cra-envs').default;
+const CraEnvs = require('@jswork/cra-envs');
 
 module.exports = CraEnvs.set({
   "local": {

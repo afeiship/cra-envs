@@ -10,6 +10,7 @@
   gulp.task('scripts:cjs', function () {
     return gulp
       .src('src/index.ts')
+      .pipe($.replace('export default ', 'export = '))
       .pipe($.jswork.pkgHeader())
       .pipe($.typescript({ ...tsconfig.compilerOptions, module: 'commonjs' }))
       .pipe(gulp.dest('dist/cjs'))
