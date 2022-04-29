@@ -7,24 +7,18 @@ const RC_APP = 'REACT_APP_';
 const RC_SIZE = RC_APP.length;
 
 export default class {
-  static get(inPath, inTarget?) {
+  static get(inTarget?) {
     const envs = inTarget || process.env;
-    const [env, key] = inPath.split('.');
-    return nx.get(envs, `${env}.${RC_APP}${key}`, {});
-  }
-
-  static gets(inEnv?: EnvType, inTarget?) {
-    const envs = inTarget || process.env;
-    nx.forIn(envs, (_: EnvType, value) => {
-      nx.forIn(value, (k, v) => {
-        value[k.slice(RC_SIZE)] = v;
-        delete value[k];
-      });
+    nx.forIn(envs, (k, v) => {
+      if (k.includes(RC_APP)) {
+        envs[k.slice(RC_SIZE)] = v;
+        delete envs[k];
+      }
     });
-    return !!inEnv ? envs[inEnv] : envs;
+    return envs;
   }
 
-  static sets(inCmdRc) {
+  static set(inCmdRc) {
     const envs = inCmdRc;
     nx.forIn(envs, (_: EnvType, value) => {
       nx.forIn(value, (k, v) => {
