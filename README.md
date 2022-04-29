@@ -13,10 +13,25 @@ npm install @jswork/cra-envs
 
 ## usage
 ```js
-import CraEnvs from '@jswork/cra-envs';
-// or es5
-const CraEnvs from '@jswork/cra-envs'
-// usage goes here.
+const CraEnvs = require('@jswork/cra-envs').default;
+
+module.exports = CraEnvs.set({
+  "local": {
+    "API_URL": "http://localhost:3000",
+    "BUILD_ENV": 'local-api.github.com/users/afeiship',
+  },
+  "beta": {
+    "API_URL": "http://beta.api.com",
+    "BUILD_ENV": 'beta-api.github.com/users/afeiship',
+  },
+  "production": {
+    "API_URL": "http://api.com",
+    "BUILD_ENV": 'api.github.com/users/afeiship',
+  },
+});
+
+// app.tsx
+// CraEnvs.get('BUILD_ENV')
 ```
 
 ## license
