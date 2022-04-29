@@ -6,7 +6,7 @@ type PathType = null | string;
 const RC_APP = 'REACT_APP_';
 const RC_SIZE = RC_APP.length;
 
-export default class {
+class CraEnvs {
   static get(inPath?: PathType, inTarget?) {
     const envs = inTarget || process.env;
     nx.forIn(envs, (k, v) => {
@@ -31,3 +31,6 @@ export default class {
     return envs;
   }
 }
+
+module.exports = CraEnvs;
+export default CraEnvs;
