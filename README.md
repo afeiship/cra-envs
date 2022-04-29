@@ -15,7 +15,7 @@ npm install -S @jswork/cra-envs
 ## usage
 - https://js.work/works/bd65bc9da65c5
 
-```json
+```js
 // ---------- package.json
 "scripts": {
   "start": "env-cmd -e local react-scripts start",
