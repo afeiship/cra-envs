@@ -1,6 +1,6 @@
 {
   "name": "@jswork/cra-envs",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "An env-cmd helper for cra.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -48,5 +48,12 @@
   },
   "dependencies": {
     "@jswork/next": "^1.0.9"
-  }
+  },
+  "keywords": [
+    "cra",
+    "env-cmd",
+    "react",
+    "env",
+    "environment"
+  ]
 }
