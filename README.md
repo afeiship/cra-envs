@@ -18,7 +18,7 @@ import fullscreen from '@jswork/fullscreen';
 // usage goes here.
 ```
 
-> useage
+> in html
 ```html
 <button id="p1">Request Fullscreen</button>
 <button id="p2">Exit Fullscreen</button>
