@@ -11,6 +11,7 @@ class Fullscreen {
       doc.msFullscreenEnabled
     );
   }
+
   static request(inElement?: HTMLElement) {
     const element = inElement || (document.documentElement as any);
     if (element.requestFullscreen) {
