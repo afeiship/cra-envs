@@ -15,18 +15,21 @@ npm install @jswork/fullscreen
 ```js
 import fullscreen from '@jswork/fullscreen';
 
-import fullscreen from '@jswork/fullscreen';
-
 // enter fullscreen
 fullscreen.request()
+
 // exit fullscreen
 fullscreen.exit()
+
 // toggle fullscreen
 fullscreen.toggle()
+
 // register event
 const res = fullscreen.on((e)=>console.log(e));
+
 // unregister event
 res.destroy();
+
 // detect fullscreen status
 fullscreen.isFullscreen
 ```
