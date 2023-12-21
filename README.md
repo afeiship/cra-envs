@@ -1,5 +1,5 @@
-# cra-envs
-> An env-cmd helper for cra.
+# fullscreen
+> Fullscreen API.
 
 [![version][version-image]][version-url]
 [![license][license-image]][license-url]
@@ -8,61 +8,32 @@
 
 ## installation
 ```shell
-npm install -D env-cmd
-npm install -S @jswork/cra-envs
+npm install @jswork/fullscreen
 ```
 
 ## usage
-- https://js.work/works/bd65bc9da65c5
-
 ```js
-// ---------- package.json
-"scripts": {
-  "start": "env-cmd -e local react-scripts start",
-  "build:beta": "env-cmd -e beta react-scripts build",
-  "build:prod": "env-cmd -e prod react-scripts build",
-  "test": "react-scripts test",
-  "eject": "react-scripts eject"
-}
+import fullscreen from '@jswork/fullscreen';
+
+// usage goes here.
 ```
 
-```js
-// ---------- .env-cmdrc.js
-const CraEnvs = require('@jswork/cra-envs');
-
-module.exports = CraEnvs.set({
-  "local": {
-    "API_URL": "http://localhost:3000",
-    "BUILD_ENV": 'local-api.github.com/users/afeiship',
-  },
-  "beta": {
-    "API_URL": "http://beta.api.com",
-    "BUILD_ENV": 'beta-api.github.com/users/afeiship',
-  },
-  "production": {
-    "API_URL": "http://api.com",
-    "BUILD_ENV": 'api.github.com/users/afeiship',
-  },
-});
-
-// ---------- src/app.tsx
-// get 'BUILD_ENV'
-const buildEnv = CraEnvs.get('BUILD_ENV');
-// get all
-const envs = CraEnvs.get();
+## types
+```ts
+/// <reference types="@jswork/fullscreen/global.d.ts" />
 ```
 
 ## license
-Code released under [the MIT license](https://github.com/afeiship/cra-envs/blob/master/LICENSE.txt).
+Code released under [the MIT license](https://github.com/afeiship/fullscreen/blob/master/LICENSE.txt).
 
-[version-image]: https://img.shields.io/npm/v/@jswork/cra-envs
-[version-url]: https://npmjs.org/package/@jswork/cra-envs
+[version-image]: https://img.shields.io/npm/v/@jswork/fullscreen
+[version-url]: https://npmjs.org/package/@jswork/fullscreen
 
-[license-image]: https://img.shields.io/npm/l/@jswork/cra-envs
-[license-url]: https://github.com/afeiship/cra-envs/blob/master/LICENSE.txt
+[license-image]: https://img.shields.io/npm/l/@jswork/fullscreen
+[license-url]: https://github.com/afeiship/fullscreen/blob/master/LICENSE.txt
 
-[size-image]: https://img.shields.io/bundlephobia/minzip/@jswork/cra-envs
-[size-url]: https://github.com/afeiship/cra-envs/blob/master/dist/cra-envs.min.js
+[size-image]: https://img.shields.io/bundlephobia/minzip/@jswork/fullscreen
+[size-url]: https://github.com/afeiship/fullscreen/blob/master/dist/index.min.js
 
-[download-image]: https://img.shields.io/npm/dm/@jswork/cra-envs
-[download-url]: https://www.npmjs.com/package/@jswork/cra-envs
+[download-image]: https://img.shields.io/npm/dm/@jswork/fullscreen
+[download-url]: https://www.npmjs.com/package/@jswork/fullscreen

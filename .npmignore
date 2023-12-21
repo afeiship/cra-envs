@@ -10,9 +10,12 @@ gulpfile.js
 
 .editorconfig
 .prettierrc
+.prettierignore
 .release-it.json
+typedoc.js
 tsconfig.json
 jest.config.js
 babel.config.js
 yarn-error.log
 yarn.lock
+tsup.config.ts

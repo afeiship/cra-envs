@@ -1,41 +1,63 @@
-import nx from '@jswork/next';
+// @thanks to: https://wohugb.gitbooks.io/javascript/content/htmlapi/fullscreen.html
 
-declare var process: any;
-
-type PathType = null | string;
-interface EnvType {
-  readonly [index: string]: unknown;
-}
-
-const RC_APP = 'REACT_APP_';
-const RC_SIZE = RC_APP.length;
-
-class CraEnvs {
-  static get(inPath?: PathType, inTarget?) {
-    const envs = inTarget || process.env;
-    nx.forIn(envs, (k: string, v: EnvType) => {
-      if (k.includes(RC_APP)) {
-        envs[k.slice(RC_SIZE)] = v;
-        delete envs[k];
-      }
-    });
-    return inPath ? nx.get(envs, inPath) : envs;
+class Fullscreen {
+  static isFullscreen = false;
+  static get isEnabled() {
+    const doc = document as any;
+    return (
+      doc.fullscreenEnabled ||
+      doc.mozFullScreenEnabled ||
+      doc.webkitFullscreenEnabled ||
+      doc.msFullscreenEnabled
+    );
+  }
+  static request(inElement?: HTMLElement) {
+    const element = inElement || (document.documentElement as any);
+    if (element.requestFullscreen) {
+      element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) {
+      element.mozRequestFullScreen();
+    } else if (element.msRequestFullscreen) {
+      element.msRequestFullscreen();
+    } else if (element.webkitRequestFullscreen) {
+      element.webkitRequestFullScreen();
+    }
   }
 
-  static set(inCmdRc) {
-    const envs = inCmdRc;
-    nx.forIn(envs, (_: string, value) => {
-      nx.forIn(value, (k: string, v: EnvType) => {
-        // v: must be string
-        if (typeof v === 'string') process.env[k] = v;
-        if (!k.includes(RC_APP)) {
-          value[RC_APP + k] = v;
-          delete value[k];
-        }
-      });
-    });
-    return envs;
+  static exit() {
+    const doc = document as any;
+    if (doc.exitFullscreen) {
+      doc.exitFullscreen();
+    } else if (doc.msExitFullscreen) {
+      doc.msExitFullscreen();
+    } else if (doc.mozCancelFullScreen) {
+      doc.mozCancelFullScreen();
+    } else if (doc.webkitExitFullscreen) {
+      doc.webkitExitFullscreen();
+    }
+  }
+
+  static toggle(inElement?: HTMLElement) {
+    const { isFullscreen } = Fullscreen;
+    if (isFullscreen) {
+      this.request(inElement);
+    } else {
+      this.exit();
+    }
+  }
+
+  static on(inHandler: (e: any) => any) {
+    document.addEventListener('fullscreenchange', inHandler);
+    return {
+      destory: () => {
+        document.removeEventListener('fullscreenchange', inHandler);
+      },
+    };
   }
 }
 
-export default CraEnvs;
+document.addEventListener('fullscreenchange', function () {
+  Fullscreen.isFullscreen = !!document.fullscreenElement;
+});
+
+export default Fullscreen;
