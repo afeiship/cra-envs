@@ -18,6 +18,24 @@ import fullscreen from '@jswork/fullscreen';
 // usage goes here.
 ```
 
+> useage
+```html
+<button id="p1">Request Fullscreen</button>
+<button id="p2">Exit Fullscreen</button>
+<script>
+    const el1 = document.getElementById('p1');
+    const el2 = document.getElementById('p2');
+    const full = fullscreen.default;
+    el1.addEventListener('click', () => {
+      full.request();
+    });
+
+    el2.addEventListener('click', () => {
+      full.exit();
+    });
+</script>
+```
+
 ## types
 ```ts
 /// <reference types="@jswork/fullscreen/global.d.ts" />
