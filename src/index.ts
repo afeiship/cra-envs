@@ -47,6 +47,19 @@ class Fullscreen {
     }
   }
 
+  static to(inValue: boolean) {
+    const { isFullscreen } = Fullscreen;
+    if (inValue) {
+      if (!isFullscreen) {
+        this.request();
+      }
+    } else {
+      if (isFullscreen) {
+        this.exit();
+      }
+    }
+  }
+
   static on(inHandler: (e: any) => any) {
     document.addEventListener('fullscreenchange', inHandler);
     return {
