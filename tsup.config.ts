@@ -10,7 +10,7 @@ export default defineConfig({
   dts: false,
   clean: true,
   sourcemap: true,
-  onSuccess: 'tsc --project tsconfig.json --emitDeclarationOnly --declaration --outDir dist',
+  onSuccess: 'tsc --emitDeclarationOnly --declaration --outDir dist',
   outExtension({ format }) {
     return {
       js: `.${format}.js`,
