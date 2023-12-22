@@ -41,9 +41,9 @@ class Fullscreen {
   static toggle(inElement?: HTMLElement) {
     const { isFullscreen } = Fullscreen;
     if (isFullscreen) {
-      this.request(inElement);
-    } else {
       this.exit();
+    } else {
+      this.request(inElement);
     }
   }
 
