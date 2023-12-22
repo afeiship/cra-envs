@@ -13,6 +13,8 @@ class Fullscreen {
   }
 
   static request(inElement?: HTMLElement) {
+    const { isFullscreen } = Fullscreen;
+    if (isFullscreen) return;
     const element = inElement || (document.documentElement as any);
     if (element.requestFullscreen) {
       element.requestFullscreen();
@@ -26,6 +28,8 @@ class Fullscreen {
   }
 
   static exit() {
+    const { isFullscreen } = Fullscreen;
+    if (!isFullscreen) return;
     const doc = document as any;
     if (doc.exitFullscreen) {
       doc.exitFullscreen();
@@ -50,13 +54,9 @@ class Fullscreen {
   static to(inValue: boolean) {
     const { isFullscreen } = Fullscreen;
     if (inValue) {
-      if (!isFullscreen) {
-        this.request();
-      }
+      this.request();
     } else {
-      if (isFullscreen) {
-        this.exit();
-      }
+      this.exit();
     }
   }
 
