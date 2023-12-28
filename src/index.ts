@@ -14,49 +14,51 @@ class Fullscreen {
 
   static request(inElement?: HTMLElement) {
     const { isFullscreen } = Fullscreen;
-    if (isFullscreen) return;
+    if (isFullscreen) return Promise.resolve();
     const element = inElement || (document.documentElement as any);
     if (element.requestFullscreen) {
-      element.requestFullscreen();
+      return element.requestFullscreen();
     } else if (element.mozRequestFullScreen) {
-      element.mozRequestFullScreen();
+      return element.mozRequestFullScreen();
     } else if (element.msRequestFullscreen) {
-      element.msRequestFullscreen();
+      return element.msRequestFullscreen();
     } else if (element.webkitRequestFullscreen) {
-      element.webkitRequestFullScreen();
+      return element.webkitRequestFullScreen();
     }
+    return Promise.resolve();
   }
 
   static exit() {
     const { isFullscreen } = Fullscreen;
-    if (!isFullscreen) return;
+    if (!isFullscreen) return Promise.resolve();
     const doc = document as any;
     if (doc.exitFullscreen) {
-      doc.exitFullscreen();
+      return doc.exitFullscreen();
     } else if (doc.msExitFullscreen) {
-      doc.msExitFullscreen();
+      return doc.msExitFullscreen();
     } else if (doc.mozCancelFullScreen) {
-      doc.mozCancelFullScreen();
+      return doc.mozCancelFullScreen();
     } else if (doc.webkitExitFullscreen) {
-      doc.webkitExitFullscreen();
+      return doc.webkitExitFullscreen();
     }
+    return Promise.resolve();
   }
 
   static toggle(inElement?: HTMLElement) {
     const { isFullscreen } = Fullscreen;
     if (isFullscreen) {
-      this.exit();
+      return this.exit();
     } else {
-      this.request(inElement);
+      return this.request(inElement);
     }
   }
 
   static to(inValue: boolean, inElement?: HTMLElement) {
     const { isFullscreen } = Fullscreen;
     if (inValue) {
-      this.request(inElement);
+      return this.request(inElement);
     } else {
-      this.exit();
+      return this.exit();
     }
   }
 
