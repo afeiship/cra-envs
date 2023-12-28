@@ -54,7 +54,6 @@ class Fullscreen {
   }
 
   static to(inValue: boolean, inElement?: HTMLElement) {
-    const { isFullscreen } = Fullscreen;
     if (inValue) {
       return this.request(inElement);
     } else {
