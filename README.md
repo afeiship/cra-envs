@@ -41,13 +41,12 @@ fullscreen.isFullscreen
 <script>
     const el1 = document.getElementById('p1');
     const el2 = document.getElementById('p2');
-    const full = fullscreen.default;
     el1.addEventListener('click', () => {
-      full.request();
+      fullscreen.request();
     });
 
     el2.addEventListener('click', () => {
-      full.exit();
+      fullscreen.exit();
     });
 </script>
 ```

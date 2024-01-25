@@ -12,5 +12,8 @@
     "moduleResolution": "node",
     "noImplicitAny": false
   },
-  "include": ["src", "global.d.ts"]
+  "include": [
+    "src",
+    "global.d.ts"
+  ]
 }
