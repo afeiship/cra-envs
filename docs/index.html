@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/@jswork/fullscreen"></script>
+  </head>
+  <body>
+      <button id="p1">Request Fullscreen</button>
+      <button id="p2">Exit Fullscreen</button>
+      <script>
+          const el1 = document.getElementById('p1');
+          const el2 = document.getElementById('p2');
+
+          // enter fullscreen
+          el1.addEventListener('click', () => {
+            fullscreen.request();
+          });
+
+          // exit fullscreen
+          el2.addEventListener('click', () => {
+            fullscreen.exit();
+          });
+
+          // listen change
+          fullscreen.on((e) => {
+            console.log('change: ', e);
+          });
+      </script>
+  </body>
+</html>
