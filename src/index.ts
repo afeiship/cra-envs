@@ -64,7 +64,7 @@ class Fullscreen {
   static on(inHandler: (e: any) => any) {
     document.addEventListener('fullscreenchange', inHandler);
     return {
-      destory: () => {
+      destroy: () => {
         document.removeEventListener('fullscreenchange', inHandler);
       },
     };
