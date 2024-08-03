@@ -1,9 +1,10 @@
-import { defineConfig } from 'tsup';
+import { defineConfig, Options } from 'tsup';
+import { umdWrapper } from 'esbuild-plugin-umd-wrapper';
+import { replace } from 'esbuild-plugin-replace';
 
-export default defineConfig({
+const baseConfig = {
   entry: ['src/*.ts'],
   format: ['cjs', 'esm'],
-  splitting: true,
   cjsInterop: true,
   clean: true,
   dts: true,
@@ -13,4 +14,20 @@ export default defineConfig({
       js: `.${format}.js`,
     };
   },
-});
+} as Options;
+
+export default defineConfig([
+  { ...baseConfig, splitting: true },
+  {
+    ...baseConfig,
+    format: ['umd'] as any,
+    esbuildPlugins: [
+      replace({
+        'export default': 'export =',
+      }),
+      umdWrapper({
+        libraryName: 'fullscreen',
+      }),
+    ],
+  },
+]);
