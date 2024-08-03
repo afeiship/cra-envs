@@ -1,6 +1,6 @@
 {
   "name": "@jswork/fullscreen",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Fullscreen API.",
   "type": "module",
   "main": "dist/index.cjs.js",
@@ -35,6 +35,8 @@
   "dependencies": {},
   "keywords": [
     "api",
-    "fullscreen"
+    "fullscreen",
+    "iife",
+    "umd"
   ]
 }
